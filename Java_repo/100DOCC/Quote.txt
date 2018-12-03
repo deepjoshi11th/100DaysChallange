@@ -1,0 +1,57 @@
+%
+If it weren't for C, we'd all be programming in BASI and OBOL.
+%
+Bad command or file name! Go stand in the corner.
+%
+A polar bear is a rectangular bear after a coordinate transform.
+%
+Computers make very fast, very accurate mistakes.
+%
+Computers are not intelligent. They only think they are.
+%
+My software never has bugs. It just develops random features.
+%
+The Definition of an Upgrade: Take old bugs out, put new ones in.
+%
+Never attribute to malloc what can be easily explained by stupidity.
+%
+Why doesn't DOS ever say "EXCELLENT command or filename!"
+%
+As a computer, I find your faith in technology amusing.
+%
+An error?  Impossible!  My modem is error correcting.
+%
+Those who do not learn from Dilbert are doomed to repeat it.
+%
+Whaddya mean you haven't got Klingon fonts for X11?
+%
+All computers wait at the same speed.
+%
+DEFINITION: Computer - A device designed to speed and automate errors.
+%
+The truth is out there...anybody got the URL?
+%
+I am logged in, therefore I am.
+%
+Old programmers never die; they just give up their resources. 
+%
+Calm down. It's only ones and zeros.
+%
+To err is human - and to blame it on a computer is even more so. 
+%
+Computers can never replace human stupidity 
+%
+Blessed is the end-user who expects nothing, for ye shall not be disappointed.
+%
+Unix is user friendly...its just selective about who its friends are.
+%
+Artificial intelligence usually beats real stupidity.
+%
+Bell Labs Unix -- Reach out and grep someone.
+%
+Unix is not a "A-ha" experience, it is more of a "holy-shit" experience.
+  -- Colin McFadyen in alt.folklore.computers
+%
+To know recursion, you must first know recursion.
+%
+Black holes are where God divided by zero.
