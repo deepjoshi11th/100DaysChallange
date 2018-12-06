@@ -7,12 +7,16 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public class Tester {
 	public static Set<Character> extras = new HashSet<Character>();
 	public static Set<String> actors = new HashSet<String>();
+	public static HashMap<String,Integer> bag = new HashMap<String,Integer>();
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//System.out.println("Hello, World");
@@ -34,9 +38,11 @@ public class Tester {
 						//System.out.println(line);
 						pw.println(line);
 						String[] words = separateWords(line);
+						addToHashSet(words);
 					}
 				}
 			}
+			printHead(100);
 			br.close();
 			System.out.println(extras);
 			System.out.println(actors);
@@ -48,8 +54,62 @@ public class Tester {
 			e.printStackTrace();
 		}
 	}
+	private static void printHead(int limit) {
+		String index="the";
+		int max = 0;
+		int number = 1;
+		System.out.println("Size of the bag is "+bag.size());
+		if((bag!=null)&&(!bag.isEmpty())&&(limit>0)) {
+			for(int i=0;i<limit;i++) {
+				Set set = bag.entrySet();
+				Iterator iterator = set.iterator();
+			    while(iterator.hasNext()) {
+			         Entry<String,Integer> mentry = (Entry<String,Integer>)iterator.next();
+			         if(mentry.getValue()>max) {
+			        	 index = mentry.getKey();
+			        	 max = mentry.getValue();
+			         }
+			         
+			    }
+			    System.out.println("at number "+number+" "+index + " : "+bag.get(index));
+			    bag.put(index, 0);
+			    max=0;
+			    number++;
+			}
+		}
+		
+	}
+	private static void addToHashSet(String[] words) {
+		if((words!=null)&&(words.length!=0)) {
+			for(int i=0;(i<words.length)&&(words[i]!=null);i++) {
+				String word = allSmallOf(words[i]);
+				if(bag.get(word)==null) {
+					bag.put(word, 1);
+				} else {
+					bag.put(word, bag.get(word)+1);
+				}
+			}
+		}
+	}
+	private static String allSmallOf(String string) {
+		if((string!=null)&&(string.length()!=0)) {
+			String ret;
+			char[] ins = string.toCharArray();
+			char[] outs = new char[string.length()];
+			for(int i=0;i<string.length();i++) {
+				if((ins[i]>='A')&&(ins[i]<='Z')) {
+					outs[i] = (char) (ins[i] +32);
+				} else {
+					outs[i] = ins[i];
+				}
+			}
+			ret = new String(outs);
+			return ret;
+		}
+		return null;
+	}
 	private static String removePunctuation(String line) {
-		char[] puncts = {',','.',':',';','?','!','_'};
+		char[] puncts = {',','.',':',';','?','!','_','‘','’'};
 		String ret = line;
 		int index;
 		for(int i=0;i<puncts.length;i++) {
@@ -94,7 +154,7 @@ public class Tester {
 					int firstIndex = ret.indexOf(words[i]);
 					int secondIndex = firstIndex + words[i].length();
 					if((firstIndex!=-1)&&(secondIndex!=-1)&&(secondIndex>firstIndex)) {
-						ret = ret.substring(0,firstIndex)+ret.substring(secondIndex+1,ret.length());	
+						ret = ret.substring(0,firstIndex)+ret.substring(secondIndex,ret.length());	
 					}
 				}
 			}
