@@ -1,5 +1,5 @@
 %
-If it weren't for C, we'd all be programming in BASI and OBOL.
+If it weren't for C++, we'd all be programming in BASI and OBOL.
 %
 Bad command or file name! Go stand in the corner.
 %
